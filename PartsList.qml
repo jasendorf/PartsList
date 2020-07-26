@@ -15,7 +15,7 @@ MuseScore {
 
     FileIO {
           id: outfile
-          source: tempPath() + "/" + curScore.scoreName + "-partlist.txt"
+          source: tempPath() + "/" + curScore.scoreName + "-partslist.txt"
           onError: console.log(msg)
     }
     QProcess {
@@ -48,7 +48,9 @@ MuseScore {
             var rc = outfile.write(thepartslist);
             if (rc){
                   console.log("Parts list has been  written to " + outfile.source);
-                  proc.start("notepad " + outfile.source); // Windows
+                  if (Qt.platform.os == "windows") {
+                      proc.start("notepad " + outfile.source); // Windows
+                  }
             } else {
                   console.log("Something went wrong. File cannot be written");
             }
