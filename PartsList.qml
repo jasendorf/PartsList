@@ -1,11 +1,14 @@
 import QtQuick 2.0
 import MuseScore 3.0
 import FileIO 3.0
+import QtQuick.Window 2.2
+
 
 MuseScore {
     menuPath: "Plugins.PartsList"
     version:  "1.0"
     description: "Lists the parts in a score. By John Asendorf"
+    id: partsList
     pluginType: "dialog"
     width:  300
     height: 200
@@ -33,7 +36,7 @@ MuseScore {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: Qt.quit()
+            onClicked: partsList.parent.Window.window.close()
         }
     }
 
