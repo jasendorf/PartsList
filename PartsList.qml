@@ -31,7 +31,7 @@ MuseScore {
             horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.WordWrap
-            text: "Parts List Completed,\nClick Here to Close\n\nIt has been written to:\n" + outfile.source
+            text: "   Parts List Completed,\n   Click Here to Close\n\n   It has been written to:\n   " + outfile.source
         }
 
         MouseArea {
